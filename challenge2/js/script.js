@@ -1,7 +1,8 @@
 $(document).ready(function(){
     $('#add').click(function(){
         var newTodo = $('#new').val();
-        $('#todos > tbody:first').append('<tr><td>' + newTodo + '</td></tr>');
+        $('<tr><td>' + newTodo + '</td></tr>').prependTo('#todos > tbody');
+        $('#new').val('');
     });
 });
 

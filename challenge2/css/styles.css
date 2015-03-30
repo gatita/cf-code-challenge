@@ -6,6 +6,6 @@
     margin-top: 10px;
 }
 
-#todos tr {
+#todos tbody tr {
     cursor: pointer;
 }

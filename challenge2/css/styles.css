@@ -5,3 +5,7 @@
 .btn {
     margin-top: 10px;
 }
+
+#todos tr {
+    cursor: pointer;
+}

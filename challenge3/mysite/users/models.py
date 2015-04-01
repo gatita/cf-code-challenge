@@ -1,8 +1,8 @@
 from django.db import models
 
 class User(models.Model):
-    first_name = models.CharField(max_length=40)
-    last_name = models.CharField(max_length=40, blank=True)
+    first_name = models.CharField('First Name', max_length=40)
+    last_name = models.CharField('Last Name', max_length=40, blank=True)
     email = models.EmailField()
 
     def __unicode__(self):

@@ -17,9 +17,13 @@ class Shelf(object):
         self.books.append(book)
         
     def remove_book(self, book):
+        if not(book in self.books):
+            raise ValueError('Book is not on shelf.')
         self.books.remove(book)
         
     def show_books(self):
+        if len(self.books) == 0:
+            print 'This shelf contains 0 books.'
         for book in self.books:
             print book.title + ' by ' + book.author
 

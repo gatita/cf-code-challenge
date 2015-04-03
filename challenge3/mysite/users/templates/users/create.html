@@ -1,5 +1,13 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <input type="submit" value="Add New User">
-</form>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/normalize.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'users/skeleton.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}" />
+<div class="container">
+    <h2>Add New User</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <input class="button-primary" type="submit" value="Submit">
+        </form>
+</div>
+

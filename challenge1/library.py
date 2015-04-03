@@ -38,11 +38,27 @@ class Book(object):
     def unshelf(self, shelf):
         shelf.remove_book(self)
         
+#create library    
 library = Library()
+
+#create shelves
 nonfiction = Shelf()
+fiction = Shelf()
+
+#create books
 book1 = Book('Ideas and Opinions', 'Albert Einstein')
 book2 = Book('Speak, Memory', 'Vladimir Nabokov')
 book3 = Book('The Elements of Style', 'William Strunk and E.B. White')
+
+
+book3.enshelf(nonfiction)
+nonfiction.show_books()
+library.add_shelf(nonfiction)
+library.number_of_shelves()
+book3.unshelf(nonfiction)
+
+
+
 
 
     

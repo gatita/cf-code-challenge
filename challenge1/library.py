@@ -7,6 +7,10 @@ class Library(object):
         
     def number_of_shelves(self):
         return len(self.shelves)
+        
+    def show_books(self):
+        for shelf in self.shelves:
+            shelf.show_books()
            
         
 class Shelf(object):
@@ -22,8 +26,6 @@ class Shelf(object):
         self.books.remove(book)
         
     def show_books(self):
-        if len(self.books) == 0:
-            print 'This shelf contains 0 books.'
         for book in self.books:
             print book.title + ' by ' + book.author
 
@@ -49,6 +51,7 @@ fiction = Shelf()
 book1 = Book('Ideas and Opinions', 'Albert Einstein')
 book2 = Book('Speak, Memory', 'Vladimir Nabokov')
 book3 = Book('The Elements of Style', 'William Strunk and E.B. White')
+book4 = Book('The Brothers Karamazov', 'Fyodor Dostoyevsky')
 
 
 book3.enshelf(nonfiction)
@@ -57,6 +60,12 @@ library.add_shelf(nonfiction)
 print library.number_of_shelves()
 book3.unshelf(nonfiction)
 nonfiction.show_books()
+book2.enshelf(nonfiction)
+book4.enshelf(fiction)
+library.show_books()
+library.add_shelf(fiction)
+print library.number_of_shelves()
+library.show_books()
 
 
 
